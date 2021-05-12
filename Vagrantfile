@@ -17,4 +17,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     (0..2).each do |i|
       v.vm.disk :disk, size: "5GB", name: "disk-#{i}"
   end
+
 end
