@@ -5,7 +5,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "generic/rhel8"
-  config.vm.hostname = ""
+  config.vm.hostname = "lab.vm1"
   config.vm.network :private_network, ip: "192.168.55.55"
   config.ssh.insert_key = false
   config.vm.synced_folder ".", "/vagrant", disabled: true
