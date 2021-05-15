@@ -5,6 +5,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
+#Building Server 1
   config.vm.define "srv1" do |srv1|
     srv1.vm.box = "generic/rhel8"
     srv1.vm.hostname = "vm1"
@@ -18,7 +19,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
-  config.vm.define "db" do |srv2|
+#Building Server 2
+  config.vm.define "srv2" do |srv2|
     srv2.vm.box = "generic/rhel8"
     srv2.vm.hostname = "vm2"
     srv2.vm.network :private_network, ip: "192.168.55.56"
@@ -30,8 +32,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       res.cpus = 1
     end
   end
-
-  config.vm.define "db" do |srv3|
+  
+#Building Server 3
+  config.vm.define "srv3" do |srv3|
     srv3.vm.box = "generic/rhel8"
     srv3.vm.hostname = "vm3"
     srv3.vm.network :private_network, ip: "192.168.55.57"
