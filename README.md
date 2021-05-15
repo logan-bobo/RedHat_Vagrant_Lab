@@ -18,22 +18,22 @@ A simple lab to provide agaility in machine provisining when studying for RHCSE 
    ```sh 
    $ vagrant up
    ```
-4. Stop the lab
+4. Stop the lab!
    ```sh 
    $ vagrant halt
    ```
 
-5. Start the lab again
+5. Start the lab again!
    ```sh 
    $ vagrant resume
    ```
 
-6. Destroy the lab again
+6. Destroy the lab again!
    ```sh 
    $ vagrant destroy
    ```
 
-7. To remove all vms from disk 
+7. To remove all vms from disk!
    ```sh 
    $ vagrant box remove
    ```
