@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     srv1.vm.network :private_network, ip: "192.168.55.55"
     srv1.ssh.insert_key = false
     srv1.vm.synced_folder ".", "/vagrant", disabled: true
-    srv3.vm.disk :disk, name: "STOR", size: "3GB"
+    srv1.vm.disk :disk, name: "STOR", size: "3GB"
     srv1.vm.provider :virtualbox do |res|
       res.memory = 512 
       res.cpus = 1
@@ -33,7 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "db" do |srv3|
     srv3.vm.box = "generic/rhel8"
-    srv3.vm.hostname = "vm2"
+    srv3.vm.hostname = "vm3"
     srv3.vm.network :private_network, ip: "192.168.55.57"
     srv3.ssh.insert_key = false
     srv3.vm.synced_folder ".", "/vagrant", disabled: true
