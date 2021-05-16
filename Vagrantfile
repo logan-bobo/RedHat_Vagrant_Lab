@@ -6,7 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   #Building Servers
-  (1..2).each do |i|
+  (1..3).each do |i|
     config.vm.define "srv0#{i}" do |srv|
       srv.vm.box = "generic/rhel8"
       srv.vm.hostname = "vm0#{i}"
