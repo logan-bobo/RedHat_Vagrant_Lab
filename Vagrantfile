@@ -5,46 +5,19 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-#Building Server 1
-  config.vm.define "srv1" do |srv1|
-    srv1.vm.box = "generic/rhel8"
-    srv1.vm.hostname = "vm1"
-    srv1.vm.network :private_network, ip: "192.168.55.55"
-    srv1.ssh.insert_key = false
-    srv1.vm.synced_folder ".", "/vagrant", disabled: true
-    srv1.vm.disk :disk, name: "STOR", size: "3GB"
-    srv1.vm.provider :virtualbox do |res|
-      res.memory = 512 
-      res.cpus = 1
+  #Building Servers
+  (1..2).each do |i|
+    config.vm.define "srv0#{i}" do |srv|
+      srv.vm.box = "generic/rhel8"
+      srv.vm.hostname = "vm0#{i}"
+      srv.vm.network :private_network, ip: "192.168.55.5#{i}"
+      srv.ssh.insert_key = false
+      srv.vm.synced_folder ".", "/vagrant", disabled: true
+      srv.vm.disk :disk, name: "STOR", size: "3GB"
+      srv.vm.provider :virtualbox do |res|
+        res.memory = 512
+        res.cpus = 1
+      end
     end
   end
-
-#Building Server 2
-  config.vm.define "srv2" do |srv2|
-    srv2.vm.box = "generic/rhel8"
-    srv2.vm.hostname = "vm2"
-    srv2.vm.network :private_network, ip: "192.168.55.56"
-    srv2.ssh.insert_key = false
-    srv2.vm.synced_folder ".", "/vagrant", disabled: true
-    srv2.vm.disk :disk, name: "STOR", size: "3GB"
-    srv2.vm.provider :virtualbox do |res|
-      res.memory = 512 
-      res.cpus = 1
-    end
-  end
-  
-#Building Server 3
-  config.vm.define "srv3" do |srv3|
-    srv3.vm.box = "generic/rhel8"
-    srv3.vm.hostname = "vm3"
-    srv3.vm.network :private_network, ip: "192.168.55.57"
-    srv3.ssh.insert_key = false
-    srv3.vm.synced_folder ".", "/vagrant", disabled: true
-    srv3.vm.disk :disk, name: "STOR", size: "3GB"
-    srv3.vm.provider :virtualbox do |res|
-      res.memory = 512 
-      res.cpus = 1
-    end
-  end
-
 end
