@@ -1,6 +1,6 @@
 # RedHat_Vagrant_Lab
 
-A simple lab to provide agaility in machine provisining when studying for RHCSE and RHCE
+A simple lab to provide agaility in machine provisining when studying for RHCSA and RHCE
 
 ### Prerequisites
 * Vagrant
