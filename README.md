@@ -7,7 +7,7 @@ A simple lab to provide agaility in machine provisining when studying for RHCSA 
 * VirtualBox
 
 
-### Building and running the container
+### Building and running the lab
 1. Clone down the repo
 
 2. Enter the repo directory
